@@ -18,7 +18,7 @@
   </head>
   <body>
 
-    <div class="container">
+    <div id="app" class="container">
 
       <div class="mx-auto" style="width: 70%;">
         <h2 class="center">Vue 2 Vs. jQuery</h2>
@@ -33,19 +33,19 @@
             <form id="form_register">
               <div class="form-group">
                 <label for="first_name">Nombre: </label>
-                <input id="first_name" class="form-control" type="text">
+                <input id="first_name" v-model="first_name" class="form-control" type="text">
               </div>
               <div class="form-group">
                 <label for="last_name">Apellido: </label>
-                <input id="last_name" class="form-control" type="text">
+                <input id="last_name" v-model="last_name" class="form-control" type="text">
               </div>
 
-              <button id="btn_continue" class="btn btn-primary" type="submit" disabled>Continuar</button>
+              <button id="btn_continue" class="btn btn-primary" type="submit" v-bind:disabled="!isFormValid()">Continuar</button>
             </form>
           </div>
 
-          <div id="welcome">
-            <h4>Bienvenido, [nombre completo]</h4>
+          <div id="v-welcome">
+            <h4>Bienvenido, {{ first_name }} {{ last_name }}</h4>
           </div>
 
         </div>
@@ -55,5 +55,10 @@
         <p>2019 - Aprendiendo Vue 2 con Styde</p>
       </footer>
     </div>
+
+    <!-- Vue 2 - CDN (development version, includes helpful console warnings) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Vue Personalizado -->
+    <script type="text/javascript" src="./js/vue-code.js"></script>
   </body>
 </html>
