@@ -30,7 +30,7 @@
           <h6 v-if="!formSubmited" class="card-subtitle mb-2 text-muted">Diligencia todos tus datos</h6>
 
           <div v-if="!formSubmited" id="register">
-            <form v-on:submit.prevent="submitForm()" id="form_register">
+            <form @submit.prevent="submitForm()" id="form_register">
               <div class="form-group">
                 <label for="first_name">Nombre: </label>
                 <input id="first_name" v-model="first_name" class="form-control" type="text">
@@ -40,7 +40,7 @@
                 <input id="last_name" v-model="last_name" class="form-control" type="text">
               </div>
 
-              <button id="btn_continue" class="btn btn-primary" type="submit" v-bind:disabled="!isFormValid()">Continuar</button>
+              <button id="btn_continue" class="btn btn-primary" type="submit" :disabled="!isFormValid()">Continuar</button>
             </form>
           </div>
 
