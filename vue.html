@@ -26,11 +26,11 @@
 
       <div class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 class="card-title">Formulario usando Vue 2</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Diligencia todos tus datos</h6>
+          <h5 v-if="!formSubmited" class="card-title">Formulario usando Vue 2</h5>
+          <h6 v-if="!formSubmited" class="card-subtitle mb-2 text-muted">Diligencia todos tus datos</h6>
 
-          <div id="register">
-            <form id="form_register">
+          <div v-if="!formSubmited" id="register">
+            <form v-on:submit.prevent="submitForm()" id="form_register">
               <div class="form-group">
                 <label for="first_name">Nombre: </label>
                 <input id="first_name" v-model="first_name" class="form-control" type="text">
@@ -44,7 +44,7 @@
             </form>
           </div>
 
-          <div id="v-welcome">
+          <div v-else id="v-welcome">
             <h4>Bienvenido, {{ first_name }} {{ last_name }}</h4>
           </div>
 
