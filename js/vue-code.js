@@ -1,5 +1,5 @@
 // Nueva instancia de Vue
-new Vue({
+let vm = new Vue({
   el: '#app',     // Elemento donde funcionará nuestra Aplicación
   data: {         // Inicializamos los valores (inputs)
     // Se enlazan al DOM usando la directiva v-model (agregando comportamiento reactivo al DOM)
@@ -17,3 +17,7 @@ new Vue({
     }
   }
 });
+
+// Asignamos un nombre por defecto
+vm .first_name = "Elisa";
+vm .last_name = "Giraldo";
