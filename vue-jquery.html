@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Aplicación básica con Vue 2">
+    <meta name="author" content="https://github.com/jcarlosj/">
+    <link rel="icon" href="./images/favicon.png">
+
+    <title>Vue 2 Vs. jQuery</title>
+
+    <!-- Bootstrap 4 - CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <!-- Nuestra hoja de estilos personalizada -->
+    <link rel="stylesheet" href="./css/master.css">
+  </head>
+  <body>
+
+    <div id="app" class="container">
+
+      <div class="mx-auto" style="width: 70%;">
+        <h2 class="center">Vue 2 Vs. jQuery</h2>
+      </div>
+
+      <div class="mx-auto card m-4" style="width: 70%;">
+        <div class="card-body">
+          <h5 class="card-title">Usando Vue 2 y jQuery</h5>
+
+          <div>
+            <h4>Bienvenido, {{ first_name }} {{ last_name }}</h4>
+            <button class="btn btn-primary btn_saludar" type="button">Saludar</button>
+          </div>
+
+        </div>
+      </div>
+
+      <footer class="mx-auto" style="width: 70%;">
+        <p>2019 - Aprendiendo Vue 2 con Styde</p>
+      </footer>
+    </div>
+
+    <!-- Vue 2 - CDN (development version, includes helpful console warnings) -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- jQuery 3.3.1 - CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <!-- Vue Personalizado -->
+    <script type="text/javascript" src="./js/vue-and-jquery-code.js"></script>
+  </body>
+</html>
