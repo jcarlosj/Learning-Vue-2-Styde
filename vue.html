@@ -30,7 +30,8 @@
           <h6 class="card-subtitle mb-2 text-muted">Las funciones complejas deben ir dentro de la instancia de Vue</h6>
 
           <div>
-            <h4>{{ reversedName }} </h4>
+            <h4 v-text="first_name + ' ' + last_name + ' : ' + reversedName"></h4>
+            <h3 v-once>{{ nameProject }}</h3>
           </div>
 
         </div>
