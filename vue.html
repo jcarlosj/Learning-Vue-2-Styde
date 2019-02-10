@@ -18,34 +18,21 @@
   </head>
   <body>
 
-    <div id="app" class="container">
+    <div class="container">
 
       <div class="mx-auto" style="width: 70%;">
         <h2 class="center">Vue 2 Vs. jQuery</h2>
       </div>
 
-      <div class="mx-auto card m-4" style="width: 70%;">
+      <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 v-if="!formSubmited" class="card-title">Formulario usando Vue 2</h5>
-          <h6 v-if="!formSubmited" class="card-subtitle mb-2 text-muted">Diligencia todos tus datos</h6>
+          <h5 class="card-title">Usando Vue 2</h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
 
-          <div v-if="!formSubmited" id="register">
-            <form @submit.prevent="submitForm()" id="form_register">
-              <div class="form-group">
-                <label for="first_name">Nombre: </label>
-                <input id="first_name" v-model="first_name" class="form-control" type="text">
-              </div>
-              <div class="form-group">
-                <label for="last_name">Apellido: </label>
-                <input id="last_name" v-model="last_name" class="form-control" type="text">
-              </div>
-
-              <button id="btn_continue" class="btn btn-primary" type="submit" :disabled="!isFormValid()">Continuar</button>
-            </form>
-          </div>
-
-          <div v-else id="v-welcome">
-            <h4>Bienvenido, {{ first_name }} {{ last_name }}</h4>
+          <div>
+            <h4>Bienvenido, {{ this .first_name .toUpperCase() }} {{ this .last_name .toLowerCase() }} </h4>
+            <h6>Sólo tú nombre tiene {{ this .first_name .length }} caracteres</h6>
+            <p>Posees la dulzura de una chica de {{ 15 * 2 - 9 }}</p>
           </div>
 
         </div>
@@ -58,6 +45,11 @@
 
     <!-- Vue 2 - CDN (development version, includes helpful console warnings) -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- jQuery 3.3.1 - CDN -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <!-- Vue Personalizado -->
     <script type="text/javascript" src="./js/vue-code.js"></script>
   </body>
