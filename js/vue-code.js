@@ -4,7 +4,8 @@ let vm = new Vue({
   data: {         // Inicializamos los valores (inputs)
     // Se enlazan al DOM usando la directiva v-model (agregando comportamiento reactivo al DOM)
     first_name: '',
-    last_name: ''
+    last_name: '',
+    team: true
   }
 });
 

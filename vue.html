@@ -30,9 +30,7 @@
           <h6 class="card-subtitle mb-2 text-muted"></h6>
 
           <div>
-            <h4>Bienvenido, {{ this .first_name .toUpperCase() }} {{ this .last_name .toLowerCase() }} </h4>
-            <h6>Sólo tú nombre tiene {{ this .first_name .length }} caracteres</h6>
-            <p>Posees la dulzura de una chica de {{ 15 * 2 - 9 }}</p>
+            <h4>{{ team ? 'Bienvenidos team' : 'Bienvenida' }}, {{ this .first_name + '!' }} </h4>
           </div>
 
         </div>
