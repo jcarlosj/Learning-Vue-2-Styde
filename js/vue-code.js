@@ -15,5 +15,5 @@ let vm = new Vue({
 });
 
 // Asignamos un nombre por defecto
-vm .first_name = "Elisa";
+vm .first_name = "<h2>Elisa</h2>";
 vm .last_name = "Giraldo";
