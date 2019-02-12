@@ -51,14 +51,14 @@
               </div>
 
               <!-- Si tiene un año de experiencia o menos -->
-              <div v-if="vue .years < 2" :class="[ 'form-group', { 'has-error-description': false }, { 'has-error-description': descriptionError } ]">
+              <div v-if="vue .years < 2" :class="descriptionFieldClasses">
                   <label>¿Qué te motivó a aprender?</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
                   <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>
               </div>
 
               <!-- Si ha trabajado 2 años o más -->
-              <div v-else-if="vue .years >= 2" :class="[ 'form-group', { 'has-error-description': false }, { 'has-error-description': descriptionError } ]">
+              <div v-else-if="vue .years >= 2" :class="descriptionFieldClasses">
                   <label for="vue_years">Cuentamos tu experiencia con Vue</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
                   <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>

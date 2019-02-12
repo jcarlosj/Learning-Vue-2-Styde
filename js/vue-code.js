@@ -25,6 +25,9 @@ let vm = new Vue({
                 return null;
             }
 
+        },
+        descriptionFieldClasses: function() {
+            return [ 'form-group', { 'has-error-description': false }, { 'has-error-description': this .descriptionError } ];
         }
     }
 });
