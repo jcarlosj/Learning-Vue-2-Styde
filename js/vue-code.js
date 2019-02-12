@@ -28,6 +28,13 @@ let vm = new Vue({
         },
         descriptionFieldClasses: function() {
             return [ 'form-group', { 'has-error-description': false }, { 'has-error-description': this .descriptionError } ];
+        },
+        descriptionStyles: function() {
+            if( this .descriptionError ) {
+                return { 'color': 'red' };
+            }
+
+            return {};  // Objeto vacío
         }
     }
 });

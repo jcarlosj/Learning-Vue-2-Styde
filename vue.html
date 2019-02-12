@@ -26,7 +26,7 @@
 
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 class="card-title">¿Has trabajado con Vue?</h5>
+          <h5 class="card-title" :style="{ color: '#999', 'text-transform': 'uppercase' }">¿Has trabajado con Vue?</h5>
           {{ $data }}
           <!-- Radio buttons -->
           <div class="radio">
@@ -51,14 +51,14 @@
               </div>
 
               <!-- Si tiene un año de experiencia o menos -->
-              <div v-if="vue .years < 2" :class="descriptionFieldClasses">
+              <div v-if="vue .years < 2" :style="descriptionStyles">
                   <label>¿Qué te motivó a aprender?</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
                   <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>
               </div>
 
               <!-- Si ha trabajado 2 años o más -->
-              <div v-else-if="vue .years >= 2" :class="descriptionFieldClasses">
+              <div v-else-if="vue .years >= 2" :style="descriptionStyles">
                   <label for="vue_years">Cuentamos tu experiencia con Vue</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
                   <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>
