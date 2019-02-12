@@ -38,23 +38,27 @@
               </label>
           </div>
 
-          <!-- Si la respuesta es sí he trabajado con Vue -->
-          <div v-if="vue .experience" class="form-group">
-              <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
-              <input class="form-control" type="number">
-          </div>
+          <template v-if="vue .experience">
 
-          <!-- Si tiene un año de experiencia o menos -->
-          <div class="form-group">
-              <label for="vue_years">¿Qué te motivó a aprender?</label>
-              <textarea class="form-control" rows="4"></textarea>
-          </div>
+              <!-- Si la respuesta es sí he trabajado con Vue -->
+              <div class="form-group">
+                  <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
+                  <input v-model="vue .years" class="form-control" type="number">
+              </div>
 
-          <!-- Si ha trabajado 2 años o más -->
-          <div class="form-group">
-              <label for="vue_years">Cuentamos tu experiencia con Vue</label>
-              <textarea class="form-control" rows="4"></textarea>
-          </div>
+              <!-- Si tiene un año de experiencia o menos -->
+              <div v-if="vue .years < 2" class="form-group">
+                  <label for="vue_years">¿Qué te motivó a aprender?</label>
+                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
+              </div>
+
+              <!-- Si ha trabajado 2 años o más -->
+              <div v-else-if="vue .years >= 2" class="form-group">
+                  <label for="vue_years">Cuentamos tu experiencia con Vue</label>
+                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
+              </div>
+
+          </template>
 
         </div>
       </div>
