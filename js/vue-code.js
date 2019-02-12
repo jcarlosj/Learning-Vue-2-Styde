@@ -31,7 +31,7 @@ let vm = new Vue({
         },
         descriptionStyles: function() {
             if( this .descriptionError ) {
-                return { 'color': 'red' };
+                return { 'color': 'red', 'font-weight': 'bold' };
             }
 
             return {};  // Objeto vacío
