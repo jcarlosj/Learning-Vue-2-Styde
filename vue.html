@@ -54,18 +54,18 @@
               <div v-if="vue .years < 2" class="form-group">
                   <label for="vue_years">¿Qué te motivó a aprender?</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
-                  <template v-if="vue .description == ''">
-                      <small class="form-text text-muted">Es obligatorio que nos cuentes que te ha motivado a aprender</small>
-                  </template>
+                  <small v-if="vue .description == ''" class="form-text text-muted">Es obligatorio que nos cuentes que te ha motivado a aprender</small>
+                  <small v-else-if="vue .description .trim() .length < 15" class="form-text text-muted">Escribe tus motivaciones en un poco más de 15 caracteres.</small>
+                  <small v-else-if="vue .description .trim() .length > 141" class="form-text text-muted">Tus motivaviones no deben superar los 140 caracteres.</small>
               </div>
 
               <!-- Si ha trabajado 2 años o más -->
               <div v-else-if="vue .years >= 2" class="form-group">
                   <label for="vue_years">Cuentamos tu experiencia con Vue</label>
                   <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
-                  <template v-if="vue .description == ''">
-                      <small class="form-text text-muted">Es obligatorio que nos cuentes tu experiencia</small>      
-                  </template>
+                  <small v-if="vue .description .trim() == ''" class="form-text text-muted">Es obligatorio que nos cuentes tu experiencia</small>
+                  <small v-else-if="vue .description .trim() .length < 20" class="form-text text-muted">Escribe tu experiencia en un poco más de 20 caracteres.</small>
+                  <small v-else-if="vue .description .trim() .length > 281" class="form-text text-muted">Tu experiencia no debe superar los 280 caracteres.</small>
               </div>
 
           </div>
