@@ -24,22 +24,22 @@
         <h2 class="center">Vue 2</h2>
       </div>
 
-      <div class="mx-auto card m-4" style="width: 70%;">
+      <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
           <h5 class="card-title">¿Has trabajado con Vue?</h5>
-
+          {{ $data }}
           <!-- Radio buttons -->
           <div class="radio">
-              <label class="radio-inline" for="yes">
-                  <input id="yes" type="radio" value="1"> Sí
+              <label class="radio-inline">
+                  <input v-model="vue .experience" type="radio" v-bind:value="true"> Sí
               </label>
-              <label class="radio-inline" for="no">
-                  <input id="no" type="radio" value="0"> No
+              <label class="radio-inline">
+                  <input v-model="vue .experience" type="radio" v-bind:value="false"> No
               </label>
           </div>
 
           <!-- Si la respuesta es sí he trabajado con Vue -->
-          <div class="form-group">
+          <div v-if="vue .experience" class="form-group">
               <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
               <input class="form-control" type="number">
           </div>
