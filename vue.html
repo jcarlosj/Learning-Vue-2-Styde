@@ -44,18 +44,28 @@
               <div class="form-group">
                   <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
                   <input v-model="vue .years" class="form-control" type="number">
+                  <template v-if="vue .years <= 0">
+                      <small class="form-text text-muted">Por favor indique el número de años de experiencia</small>
+                  </template>
+
               </div>
 
               <!-- Si tiene un año de experiencia o menos -->
               <div v-if="vue .years < 2" class="form-group">
                   <label for="vue_years">¿Qué te motivó a aprender?</label>
-                  <textarea key="description_learning" class="form-control" rows="4"></textarea>
+                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
+                  <template v-if="vue .description == ''">
+                      <small class="form-text text-muted">Es obligatorio que nos cuentes que te ha motivado a aprender</small>
+                  </template>
               </div>
 
               <!-- Si ha trabajado 2 años o más -->
               <div v-else-if="vue .years >= 2" class="form-group">
                   <label for="vue_years">Cuentamos tu experiencia con Vue</label>
-                  <textarea key="description_experience" class="form-control" rows="4"></textarea>
+                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
+                  <template v-if="vue .description == ''">
+                      <small class="form-text text-muted">Es obligatorio que nos cuentes tu experiencia</small>      
+                  </template>
               </div>
 
           </div>
