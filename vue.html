@@ -21,18 +21,39 @@
     <div class="container">
 
       <div class="mx-auto" style="width: 70%;">
-        <h2 class="center">Vue 2 Vs. jQuery</h2>
+        <h2 class="center">Vue 2</h2>
       </div>
 
-      <div id="app" class="mx-auto card m-4" style="width: 70%;">
+      <div class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 class="card-title">Usando Vue 2</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Las funciones complejas deben ir dentro de la instancia de Vue</h6>
+          <h5 class="card-title">¿Has trabajado con Vue?</h5>
 
-          <div>
-            <div v-html="this .first_name"></div>
-            <h4 v-text="first_name + ' ' + last_name + ' : ' + reversedName"></h4>
-            <h3 v-once>{{ nameProject }}</h3>
+          <!-- Radio buttons -->
+          <div class="radio">
+              <label class="radio-inline" for="yes">
+                  <input id="yes" type="radio" value="1"> Sí
+              </label>
+              <label class="radio-inline" for="no">
+                  <input id="no" type="radio" value="0"> No
+              </label>
+          </div>
+
+          <!-- Si la respuesta es sí he trabajado con Vue -->
+          <div class="form-group">
+              <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
+              <input class="form-control" type="number">
+          </div>
+
+          <!-- Si tiene un año de experiencia o menos -->
+          <div class="form-group">
+              <label for="vue_years">¿Qué te motivó a aprender?</label>
+              <textarea class="form-control" rows="4"></textarea>
+          </div>
+
+          <!-- Si ha trabajado 2 años o más -->
+          <div class="form-group">
+              <label for="vue_years">Cuentamos tu experiencia con Vue</label>
+              <textarea class="form-control" rows="4"></textarea>
           </div>
 
         </div>
