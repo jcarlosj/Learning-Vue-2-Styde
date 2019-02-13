@@ -16,5 +16,12 @@ let vm = new Vue({
                 pending: true
             }
         ]
+    },
+    computed: {
+        pendingTasks: function() {
+            return this .tasks .filter( function( item ) {
+                return item .pending;
+            });
+        }
     }
 });
