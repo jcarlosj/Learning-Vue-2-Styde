@@ -38,12 +38,14 @@
               </li>
               <!--li v-for="task of tasks">{{ task }}</li-->
           </ul>
-          <h5>Solo las tareas pendientes</h5>
-          <ul>
-              <li v-for="(task) of pendingTasks">
-                  {{ task .title }}
-              </li>
-          </ul>
+          <template v-if="pendingTasks .length">    <!--template v-if="pendingTasks .length > 0"-->
+              <h5>Solo las tareas pendientes</h5>
+              <ul>
+                  <li v-for="(task) of pendingTasks">
+                      {{ task .title }}
+                  </li>
+              </ul>
+          </template>
         </div>
       </div>
 
