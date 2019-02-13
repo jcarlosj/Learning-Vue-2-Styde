@@ -27,14 +27,13 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
           <h5 class="card-title">Listado de tareas</h5>
-          <h6 class="card-title">Directiva v-for</h6>
+          <h6 class="card-title">Directiva v-for (Solo las tareas pendientes)</h6>
           {{ $data }}
           <br />
           <br />
           <ul>
-              <li v-for="(task, index) in tasks">
-                  <del v-if="!task .pending">{{ index }}: {{ task .title }}</del>
-                  <template v-else>{{ index }}: {{ task .title }}</template>
+              <li v-for="(task) in tasks" v-if="task .pending">
+                  {{ task .title }}
               </li>
               <!--li v-for="task of tasks">{{ task }}</li-->
           </ul>
