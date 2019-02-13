@@ -26,47 +26,15 @@
 
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 class="card-title" :style="{ color: '#999', 'text-transform': 'uppercase' }">¿Has trabajado con Vue?</h5>
+          <h5 class="card-title">Listado de tareas</h5>
+          <h6 class="card-title">Directiva v-for</h6>
           {{ $data }}
-          <!-- Radio buttons -->
-          <div class="radio">
-              <label class="radio-inline">
-                  <input v-model="vue .experience" type="radio" :value="true"> Sí
-              </label>
-              <label class="radio-inline">
-                  <input v-model="vue .experience" type="radio" :value="false"> No
-              </label>
-          </div>
-
-          <div v-show="vue .experience">
-
-              <!-- Si la respuesta es sí he trabajado con Vue -->
-              <div class="form-group">
-                  <label for="vue_years">¿Cuántos años de experiencia tienes con Vue?</label>
-                  <input v-model="vue .years" class="form-control" type="number">
-                  <template v-if="vue .years <= 0">
-                      <small class="form-text text-muted">Por favor indique el número de años de experiencia</small>
-                  </template>
-
-              </div>
-
-              <!-- Si tiene un año de experiencia o menos -->
-              <div v-if="vue .years < 2" :style="[ { 'font-style': 'italic' }, descriptionStyles ]">
-                  <label>¿Qué te motivó a aprender?</label>
-                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
-                  <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>
-              </div>
-
-              <!-- Si ha trabajado 2 años o más -->
-              <div v-else-if="vue .years >= 2" :style="[ { 'font-style': 'italic' }, descriptionStyles ]">
-                  <label for="vue_years">Cuentamos tu experiencia con Vue</label>
-                  <textarea v-model="vue .description" class="form-control" rows="4"></textarea>
-                  <small v-if="descriptionError != ''" class="form-text text-muted">{{ descriptionError }}</small>
-
-              </div>
-
-          </div>
-
+          <br />
+          <br />
+          <ul>
+              <li v-for="task in tasks">{{ task }}</li>
+              <!--li v-for="task in tasks">{{ task }}</li-->
+          </ul>
         </div>
       </div>
 
