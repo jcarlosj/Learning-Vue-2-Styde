@@ -27,11 +27,11 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
           <h5 class="card-title">Listado de tareas</h5>
-          <h6 class="card-title">Directiva v-for (en base a un listado de números)</h6>
+          <h6 class="card-title">Directiva v-for (itera propiedades)</h6>
 
           <ul>
-              <li v-for="i in 10">
-                  {{ i }}
+              <li v-for="( value, key ) in user">
+                  {{ key }}: {{ value }}
               </li>
               <!--li v-for="task of tasks">{{ task }}</li-->
           </ul>
