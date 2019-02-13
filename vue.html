@@ -31,10 +31,13 @@
           {{ $data }}
           <br />
           <br />
-          <template v-for="( task, index ) of tasks">
-              <p>{{ index }}: {{ task }}</p>
-              <hr />
-          </template>
+          <ul>
+              <li v-for="(task, index) in tasks">
+                  <del v-if="!task .pending">{{ index }}: {{ task .title }}</del>
+                  <template v-else>{{ index }}: {{ task .title }}</template>
+              </li>
+              <!--li v-for="task of tasks">{{ task }}</li-->
+          </ul>
         </div>
       </div>
 

@@ -3,9 +3,18 @@ let vm = new Vue({
     el: '#app',
     data: {
         tasks: [
-            'Técnicas de Autorización con Laravel',
-            'Métodos de Autentización con Laravel',
-            'Crea una aplicación con Laravel'
+            {
+                title: 'Técnicas de Autorización con Laravel',
+                pending: false
+            },
+            {
+                title: 'Métodos de Autentización con Laravel',
+                pending: true
+            },
+            {
+                title: 'Crea una aplicación con Laravel',
+                pending: true
+            }
         ]
     }
 });
