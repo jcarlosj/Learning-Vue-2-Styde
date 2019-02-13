@@ -30,8 +30,8 @@
           <h6 class="card-title">Directiva v-for (itera propiedades)</h6>
 
           <ul>
-              <li v-for="( value, key ) in user">
-                  {{ key }}: {{ value }}
+              <li v-for="( value, key, index ) in user">
+                  {{ index }}: {{ key }}: {{ value }}
               </li>
               <!--li v-for="task of tasks">{{ task }}</li-->
           </ul>
