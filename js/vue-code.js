@@ -2,6 +2,7 @@
 let vm = new Vue({
     el: '#app',
     data: {
+        new_task: '',
         tasks: [
             {
                 title: 'Técnicas de Autorización con Laravel',
@@ -22,6 +23,17 @@ let vm = new Vue({
             return this .tasks .filter( function( item ) {
                 return item .pending;
             });
+        }
+    },
+    methods: {
+        createTask: function() {
+            if( this .new_task .trim() .length ) {
+                this .tasks .push({
+                    title: this .new_task,
+                    pending: true
+                });
+                this .new_task = '';
+            }
         }
     }
 });

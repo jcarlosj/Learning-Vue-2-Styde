@@ -27,9 +27,10 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
 
-          <input class="form-control" type="text">
-          <button class="btn btn-primary" type="button">Crear tarea</button>
-
+          <input v-on:keyup.enter="createTask" v-model="new_task" class="form-control" type="text">
+          <button v-on:click="createTask" class="btn btn-primary" type="button">Crear tarea</button>
+          <br />
+          <br />          
           <template v-if="pendingTasks .length">    <!--template v-if="pendingTasks .length > 0"-->
             <h5>Solo las tareas pendientes</h5>
             <ul>
