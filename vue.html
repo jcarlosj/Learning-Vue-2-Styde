@@ -27,14 +27,21 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
 
-          <form @submit.prevent="createTask" >
+          <form>
               <input v-model="new_task" class="form-control" type="text">
-              <button class="btn btn-primary" type="submit">Crear tarea</button>
+              <button @click="createTask( true, $event )" class="btn btn-primary" type="submit">Crear tarea pendiente</button>
+              <button @click="createTask( false, $event )" class="btn btn-info" type="submit">Crear tarea completada</button>
           </form>
           <br />
           <br />
+
+          <h5>Tareas completadas</h5>
+          <ul>
+            <li v-for="(task) of tasks" v-if="!task .pending">{{ task .title }}</li>
+          </ul>
+
           <template v-if="pendingTasks .length">    <!--template v-if="pendingTasks .length > 0"-->
-            <h5>Solo las tareas pendientes</h5>
+            <h5>Tareas pendientes</h5>
             <ul>
                 <li v-for="(task) of pendingTasks">{{ task .title }}</li>
             </ul>
