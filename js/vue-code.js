@@ -26,8 +26,7 @@ let vm = new Vue({
         }
     },
     methods: {
-        createTask: function( event ) {
-            event .preventDefault();            // Previene auto recarga de página
+        createTask: function() {
 
             if( this .new_task .trim() .length ) {
                 this .tasks .push({

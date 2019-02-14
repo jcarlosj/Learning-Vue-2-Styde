@@ -27,7 +27,7 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
 
-          <form v-on:submit="createTask" >
+          <form @submit.prevent="createTask" >
               <input v-model="new_task" class="form-control" type="text">
               <button class="btn btn-primary" type="submit">Crear tarea</button>
           </form>
