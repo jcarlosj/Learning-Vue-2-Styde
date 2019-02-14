@@ -26,15 +26,17 @@
 
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
-          <h5 class="card-title">Listado de tareas</h5>
-          <h6 class="card-title">Directiva v-for (itera propiedades)</h6>
 
-          <ul>
-              <li v-for="( value, key ) in user">
-                  <b>{{ key }}:</b> {{ value }}
-              </li>
-              <!--li v-for="task of tasks">{{ task }}</li-->
-          </ul>
+          <input class="form-control" type="text">
+          <button class="btn btn-primary" type="button">Crear tarea</button>
+
+          <template v-if="pendingTasks .length">    <!--template v-if="pendingTasks .length > 0"-->
+            <h5>Solo las tareas pendientes</h5>
+            <ul>
+                <li v-for="(task) of pendingTasks">{{ task .title }}</li>
+            </ul>
+          </template>
+
         </div>
       </div>
 

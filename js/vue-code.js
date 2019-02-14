@@ -2,12 +2,26 @@
 let vm = new Vue({
     el: '#app',
     data: {
-        user: {
-            'Nombres': 'Juan Carlos',
-            'Apellidos': 'Jiménez Gutiérrez',
-            'Nombre de usuario': 'jcarlosj',
-            'Cuenta Github': 'https://www.github.com/jcarlosj',
-            'Correo Electrónico': 'jcjimenez29@misena.edu.co'
+        tasks: [
+            {
+                title: 'Técnicas de Autorización con Laravel',
+                pending: false
+            },
+            {
+                title: 'Métodos de Autentización con Laravel',
+                pending: true
+            },
+            {
+                title: 'Crea una aplicación con Laravel',
+                pending: true
+            }
+        ]
+    },
+    computed: {
+        pendingTasks: function() {
+            return this .tasks .filter( function( item ) {
+                return item .pending;
+            });
         }
     }
 });
