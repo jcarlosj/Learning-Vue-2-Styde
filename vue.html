@@ -29,8 +29,8 @@
 
           <form>
               <input v-model="new_task" class="form-control" type="text">
-              <button @click="createTask( true, $event )" class="btn btn-primary" type="submit">Crear tarea pendiente</button>
-              <button @click="createTask( false, $event )" class="btn btn-info" type="submit">Crear tarea completada</button>
+              <button @click.prevent="createTask( true )" class="btn btn-primary" type="submit">Crear tarea pendiente</button>
+              <button @click.prevent="createTask( false )" class="btn btn-info" type="submit">Crear tarea completada</button>
           </form>
           <br />
           <br />
