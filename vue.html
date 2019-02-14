@@ -35,17 +35,10 @@
           <br />
           <br />
 
-          <h5>Tareas completadas</h5>
+          <h5>Todas las tareas</h5>
           <ul>
-            <li v-for="(task) of tasks" v-if="!task .pending">{{ task .title }}</li>
+            <li v-for="(task) of tasks" @click="changeStatus( task )" :class="{ 'pending-task' : ! task .pending }">{{ task .title }}</li>
           </ul>
-
-          <template v-if="pendingTasks .length">    <!--template v-if="pendingTasks .length > 0"-->
-            <h5>Tareas pendientes</h5>
-            <ul>
-                <li v-for="(task) of pendingTasks">{{ task .title }}</li>
-            </ul>
-          </template>
 
         </div>
       </div>

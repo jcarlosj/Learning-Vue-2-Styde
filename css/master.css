@@ -8,3 +8,6 @@
 .has-error-description textarea {
     border-color: red;
 }
+.pending-task {
+    text-decoration: line-through;
+}

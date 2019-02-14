@@ -35,6 +35,14 @@ let vm = new Vue({
                 });
                 this .new_task = '';
             }
+        },
+        changeStatus: function( task ) {
+            task .pending = ! task .pending;
+        },
+        pendingTasks: function() {
+            return this .tasks .filter( function( task ) {
+                return task .pending;
+            });
         }
     }
 });
