@@ -11,6 +11,9 @@ let vm = new Vue({
         },
         title: function( value ) {
             return `Mrs. ${ value }`;
+        },
+        greeting: function( value, greet ) {
+            return `${ greet } ${ value }`;
         }
     }
 });
