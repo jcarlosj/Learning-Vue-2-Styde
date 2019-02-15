@@ -32,6 +32,15 @@
             <h5 class="card-title">{{ reverse( this .name ) }}</h5>
             <h5 class="card-title">{{ this .name | reversed }}</h5>
             <h5 class="card-title">{{ reversedName }}</h5>
+            <br>
+            <label for="">Nombre</label>
+            <input v-model="name" class="control-form" type="text">
+            <br>
+            <label for="">Correo</label>
+            <input v-model="email" class="control-form" type="text">
+            <br>
+            <label for="">Salario</label>
+            <input v-model="salary" class="control-form" type="text">
 
         </div>
       </div>
