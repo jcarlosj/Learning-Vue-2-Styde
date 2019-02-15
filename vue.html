@@ -27,18 +27,7 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
 
-          <form>
-              <input v-model="new_task" class="form-control" type="text">
-              <button @click.prevent="createTask( true )" class="btn btn-primary" type="submit">Crear tarea pendiente</button>
-              <button @click.prevent="createTask( false )" class="btn btn-info" type="submit">Crear tarea completada</button>
-          </form>
-          <br />
-          <br />
-
-          <h5>Todas las tareas</h5>
-          <ul>
-            <li v-for="(task) of tasks" @click="changeStatus( task )" :class="{ 'pending-task' : ! task .pending }">{{ task .title }}</li>
-          </ul>
+            <h5 class="card-title">{{ this .name }}</h5>
 
         </div>
       </div>
