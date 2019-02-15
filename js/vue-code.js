@@ -1,3 +1,7 @@
+// Define filtro de forma global
+Vue .filter( 'capital', function( value ) {
+    return value .charAt( 0 ) .toUpperCase() + value .slice( 1 );
+});
 // Code Vue
 let vm = new Vue({
     el: '#app',
