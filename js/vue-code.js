@@ -13,15 +13,19 @@ let vm = new Vue({
         gender: 'female',
         salary: 2500
     },
+    methods: {
+        reverse: function( value ) {
+            return value .split( '' ) .reverse() .join( '' );
+        }
+    },
     filters: {
-        upper: function( value ) {
-            return value .toUpperCase();
-        },
-        title: function( value ) {
-            return `Mrs. ${ value }`;
-        },
-        greeting: function( value, greet ) {
-            return `${ greet } ${ value }`;
+        reversed: function( value ) {
+            return value .split( '' ) .reverse() .join( '' );
+        }
+    },
+    computed: {
+        reversedName: function() {
+            return this .name .split( '' ) .reverse() .join( '' );
         }
     }
 });

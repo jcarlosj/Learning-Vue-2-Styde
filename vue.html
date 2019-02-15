@@ -29,8 +29,9 @@
       <div id="app" class="mx-auto card m-4" style="width: 70%;">
         <div class="card-body">
 
-            <h5 class="card-title">{{ this .name | title | capital | greeting( 'Hola!' ) }}</h5>
-            <h3 class="card-title">{{ this .salary | money }}</h3>
+            <h5 class="card-title">{{ reverse( this .name ) }}</h5>
+            <h5 class="card-title">{{ this .name | reversed }}</h5>
+            <h5 class="card-title">{{ reversedName }}</h5>
 
         </div>
       </div>
